@@ -1,0 +1,21 @@
+---
+rancid_conf: /etc/rancid/rancid.conf
+rancid_home: /home/rancid
+rancid_shell: /bin/bash
+rancid_logdir: /var/log/rancid
+rancid_password: rancid
+rancid_encrypted_password: $5$nHwLpkVx$AM4Nh.gVcIubUWBTK3Ow3OsC5ip/zux5py9ej1TeI77
+rancid_rcsys: svn
+rancid_groups:
+    - routers
+netmon:
+    devices:
+        - name: localhost
+          rancid_type: cisco
+          state: up
+          groups:
+              - routers
+    groups:
+        routers:
+            name: Routers
+            descr: Router group

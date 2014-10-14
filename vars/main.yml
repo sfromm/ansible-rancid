@@ -1,0 +1,4 @@
+---
+rancid_pkgs:
+    - rancid
+    - subversion

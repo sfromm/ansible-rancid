@@ -1,0 +1,5 @@
+# RANCID crontab
+MAILTO=rancid@{{ansible_domain}}
+
+8 * * * *  rancid /usr/bin/rancid-run
+3 8 * * *  rancid /usr/share/rancid/downreport

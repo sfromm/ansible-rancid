@@ -1,0 +1,7 @@
+{% for host in netmon.devices %}
+{%     for grp in rancid_groups %}
+{%         if grp in host.groups %}
+{{host.name}}:{{host.rancid_type}}:{{host.state}}
+{%         endif %}
+{%     endfor %}
+{% endfor %}
