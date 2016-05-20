@@ -1,5 +1,5 @@
-Role Name
-=========
+RANCID
+======
 
 Role configures [RANCID](http://www.shrubbery.net/rancid/), the *Really
 Awesome New Cisco config Differ*.
@@ -16,7 +16,8 @@ completed its tasks.
 Role Variables
 --------------
 
-The RANCID role has the following variables:
+The RANCID role has the following variables that can be overridden by
+inventory:
 
 - **rancid_conf**: */etc/rancid/rancid.conf*  This is the path to where
   *rancid.conf* is installed.

@@ -1,8 +1,13 @@
 ---
 - name: install RANCID
   yum: name={{item}} state=installed
-  with_items: rancid_pkgs
+  with_items: "{{ rancid_pkgs }}"
   register: rancid_install
+
+- name: get rancid major version
+  shell: rancid -V | cut -f1 -d.
+  register: rancid_version
+  changed_when: "rancid_version.rc != 0"
 
 - name: create RANCID user
   user: name=rancid comment="RANCID user"
@@ -20,7 +25,7 @@
   when: rancid_install.changed
 
 - name: template RANCID router files
-  with_items: rancid_groups
+  with_items: "{{ rancid_groups }}"
   template: src=router.db.j2 dest={{rancid_home}}/{{item}}/router.db
             owner=rancid group=rancid mode=0640
 
